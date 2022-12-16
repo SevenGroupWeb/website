@@ -1,0 +1,22 @@
+---
+export interface Props {
+	title: string
+	body: string
+	href: string
+}
+
+const { href, title, body } = Astro.props
+---
+
+<header class='flex items-center justify-around bg-[#000] sticky t-0'>
+	<a href='/'>
+		<picture>
+			<img src='/favicon.png' alt='Seven Group Logo' class='w-24' />
+		</picture>
+	</a>
+	<ul class='flex gap-4 text-stone-50'>
+		<li><a href='/'>Inicio</a></li>
+		<li><a href='#mision'>Misión y visión</a></li>
+		<li><a href='#contacto'>Contacto</a></li>
+	</ul>
+</header>
