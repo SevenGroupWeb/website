@@ -19,15 +19,15 @@ const { href, title, body } = Astro.props
 		}
 	}
 </script>
-<header id="header" class=' sticky t-0 z-10 transition duration-150'>
-	<div class="flex items-center justify-between mx-32 ">
+<header id="header" class='sticky t-0 z-10 transition duration-150'>
+	<div class="flex items-center justify-between lg:mx-32 ">
 		<a href='/' class="flex items-center">
 			<picture>
-				<img src='/favicon.png' alt='Seven Group Logo' class='w-24' />
+				<img src='/favicon.png' alt='Seven Group Logo' class='w-20' />
 			</picture>
-			<h1>Seven Group</h1>
+			<h2 class="hidden md:block">Seven Group</h2>
 		</a>
-		<ul class='flex gap-4 font-bold'>
+		<ul class='flex gap-2 lg:gap-4 font-bold'>
 			<li><a class="p-3 hover:bg-[#161616] rounded " href='/'>Inicio</a></li>
 			<li><a class="p-3 hover:bg-[#161616] rounded " href='#sobrenosotros'>Sobre nosotros</a></li>
 			<li><a class="p-3 hover:bg-[#161616] rounded " href='#contacto'>Contacto</a></li>
