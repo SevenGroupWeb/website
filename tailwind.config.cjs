@@ -2,10 +2,12 @@
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		fontFamily:{
+		fontFamily: {
 			'heebo': ['Heebo']
 		},
 		extend: {},
 	},
-	plugins: [],
+	plugins: [
+		require('tw-elements/dist/plugin')
+	]
 }
