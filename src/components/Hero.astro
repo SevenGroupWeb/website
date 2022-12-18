@@ -1,45 +1,41 @@
+<script is:inline>
+	window.addEventListener('load', ()=>{
+		video.play()
+	})
+</script>
+
 <section class='h-[45vh] md:h-[60vh] w-full flex items-center'>
-	<div class='container w-full mx-auto flex justify-around content-center'>
-		<!-- <div></div>
-		<div class="textwrapper w-3/4 md:w-1/2 ">
-			<h2 class=' font-bold text-7xl text-right '>
-				La membresía más épica del planeta.
-			</h2>
-			<span class="inline-block mr-2 text-[#e0e0e0] w-full italic text-sm text-right">Seven Group</span>
-		</div> -->
-		<h1 class='font-bold text-9xl text-right'>Seven Group</h1>
+	<div
+		class='relative container w-full mx-auto flex justify-around content-center'
+	>
+		<video id="video" src='/video.mp4' controls></video>
 	</div>
 </section>
 
 <style>
-	section::before {
+	div::before {
 		content: '';
-		background: rgba(231, 141, 6, 0.4);
+		background: rgba(165, 165, 165, 0.4);
 		border-radius: 50%;
-		filter: blur(60px);
+		filter: blur(100px);
 		width: 300px;
 		height: 300px;
 		position: absolute;
-		left: 200px;
-		top: 200px;
+		left: 300px;
+		top: 150px;
 		z-index: -1;
 	}
-
-	h1 {
-		background-image: -webkit-linear-gradient(92deg, #ead651, #956808);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		-webkit-animation: gradation 5s infinite cubic-bezier(0.84, 0.1, 0.56, 0.9);
-		border: 5px solid white;
-	}
-	h1::after{
-		content: 'Seven Group';
+	div::after {
+		content: '';
+		background: rgba(165, 165, 165, 0.2);
+		border-radius: 50%;
+		filter: blur(90px);
+		width: 300px;
+		height: 300px;
 		position: absolute;
-		margin: auto;
-		top: 0;
-		left: -100px;
-		z-index: 2;
-		color:black;
+		right: 300px;
+		bottom: 70px;
+		z-index: -1;
 	}
 
 	@keyframes gradation {
@@ -65,6 +61,21 @@
 			height: 150px;
 			left: 50px;
 			top: 100px;
+		}
+		div::after {
+			display: none;
+		}
+		div::before {
+			content: '';
+			background: rgba(165, 165, 165, 0.4);
+			border-radius: 50%;
+			filter: blur(100px);
+			width: 300px;
+			height: 300px;
+			position: absolute;
+			left: 30px;
+			top: 0px;
+			z-index: -1;
 		}
 	}
 </style>

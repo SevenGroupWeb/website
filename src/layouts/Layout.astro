@@ -1,47 +1,60 @@
 ---
-import Bubble from '../components/Bubble.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import Bubble from '../components/Bubble.astro'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
 
 export interface Props {
-	title: string;
+	title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
-
-<!DOCTYPE html>
-<html lang="es">
+<html lang='es'>
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.png' />
+		<meta name='generator' content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="font-heebo">
+	<body id="body" class='font-heebo relative overflow-x-hidden'>
 		<Header />
 		<slot />
 		<Bubble />
 		<Footer />
+		<script is:inline>
+			body.style.overflowY = "hidden";
+			window.addEventListener('load', ()=> body.style.overflowY = "auto" )
+		</script>
 	</body>
 </html>
+
 <style is:global>
 	@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
 	:root {
 		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			#da62c4 30%,
+			white 60%
+		);
 	}
 	html {
 		background-color: #0e0e0e;
 		scroll-behavior: smooth;
 		color: #f1f1f1;
 	}
-	h1, h2, h3, h4, h5, h6{
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		font-size: initial;
 	}
 	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+			DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 	}
 </style>

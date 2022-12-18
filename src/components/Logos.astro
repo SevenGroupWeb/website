@@ -10,19 +10,31 @@
 				class='relative p-4 cursor-pointer transition duration-400 ease-linear'
 			>
 				<img src='/lenceria.jpg' alt='Logo Seven Group' />
-				<span id="descuento" class="absolute top-0 left-0 p-2 bg-[#e78d06] text-[#1e1e1e]">07%</span>
+				<span
+					id='descuento'
+					class='absolute top-0 left-0 p-2 bg-[#f2b32a] text-[#1e1e1e]'
+					>07%</span
+				>
 			</div>
 			<div
 				class='relative p-4 cursor-pointer transition duration-400 ease-linear'
 			>
 				<img src='/accesorios.png' alt='Logo Seven Group' />
-				<span id="descuento" class="absolute top-0 left-0 p-2 bg-[#e78d06] text-[#1e1e1e]">10%</span>
+				<span
+					id='descuento'
+					class='absolute top-0 left-0 p-2 bg-[#f2b32a] text-[#1e1e1e]'
+					>10%</span
+				>
 			</div>
 			<div
 				class='relative p-4 cursor-pointer transition duration-400 ease-linear'
 			>
 				<img src='/vinodelacaza.jpg' alt='Logo Seven Group' />
-				<span id="descuento" class="absolute top-0 left-0 p-2 bg-[#e78d06] text-[#1e1e1e]">00%</span>
+				<span
+					id='descuento'
+					class='absolute top-0 left-0 p-2 bg-[#f2b32a] text-[#1e1e1e]'
+					>00%</span
+				>
 			</div>
 		</div>
 	</div>
@@ -31,12 +43,15 @@
 	.container > div {
 		width: 12rem;
 	}
-	#descuento{
-		clip-path: polygon(0 13%, 100% 13%, 100% 83%, 85% 84%, 100% 100%, 61% 85%, 0 85%);
+	.container>div:hover {
+		transform: scale(1.1);
+	}
+	#descuento {
+		clip-path: polygon(9% 16%, 89% 16%, 90% 79%, 75% 79%, 86% 100%, 51% 80%, 9% 79%);
 	}
 	@media (max-width: 640px) {
 		.container > div {
-			width: 8rem;
+			width: 10rem;
 		}
 	}
 </style>

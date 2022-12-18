@@ -5,6 +5,11 @@ module.exports = {
 		fontFamily: {
 			'heebo': ['Heebo']
 		},
+		colors: {
+			amarillo: 'e2ac37',
+			blanco: '#f1f1f1',
+			negro: '#0e0e0e'
+		},
 		extend: {},
 	},
 	plugins: []
