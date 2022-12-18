@@ -7,19 +7,22 @@
 			class='container m-auto flex flex-wrap justify-center place-items-center'
 		>
 			<div
-				class='p-4 saturate-0 hover:saturate-100 transition duration-400 ease-linear'
+				class='relative p-4 cursor-pointer transition duration-400 ease-linear'
 			>
 				<img src='/lenceria.jpg' alt='Logo Seven Group' />
+				<span id="descuento" class="absolute top-0 left-0 p-2 bg-[#e78d06] text-[#1e1e1e]">07%</span>
 			</div>
 			<div
-				class='p-4 saturate-0 hover:saturate-100 transition duration-400 ease-linear'
+				class='relative p-4 cursor-pointer transition duration-400 ease-linear'
 			>
 				<img src='/accesorios.png' alt='Logo Seven Group' />
+				<span id="descuento" class="absolute top-0 left-0 p-2 bg-[#e78d06] text-[#1e1e1e]">10%</span>
 			</div>
 			<div
-				class='p-4 saturate-0 hover:saturate-100 transition duration-400 ease-linear'
+				class='relative p-4 cursor-pointer transition duration-400 ease-linear'
 			>
 				<img src='/vinodelacaza.jpg' alt='Logo Seven Group' />
+				<span id="descuento" class="absolute top-0 left-0 p-2 bg-[#e78d06] text-[#1e1e1e]">00%</span>
 			</div>
 		</div>
 	</div>
@@ -27,6 +30,9 @@
 <style>
 	.container > div {
 		width: 12rem;
+	}
+	#descuento{
+		clip-path: polygon(0 13%, 100% 13%, 100% 83%, 85% 84%, 100% 100%, 61% 85%, 0 85%);
 	}
 	@media (max-width: 640px) {
 		.container > div {
