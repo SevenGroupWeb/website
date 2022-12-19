@@ -1,45 +1,76 @@
-<div class='w-full py-16 mb-8'>
+<script is:inline>
+	
+	let xcord = 0
+	setInterval(() => {
+		if(xcord > 360) xcord = 0
+		
+		slider.scroll(xcord,0)
+		xcord += 1
+
+	}, 40)
+
+</script>
+
+<div class='w-full py-16'>
 	<div class='m-auto mt-8'>
 		<div class='m-auto text-center lg:w-7/12'>
 			<h2 class='text-2xl font-bold md:text-4xl'>Nuestros convenios</h2>
 		</div>
 		<div
-			class='container m-auto flex flex-wrap justify-center place-items-center'
+			id="slider"
+			class='container w-10/12 mx-auto grid grid-flow-col place-items-center overflow-x-auto overflow-y-hidden pb-1 mb-1 lg:w-2/3'
 		>
 			<div
 				class='relative p-4 cursor-pointer transition duration-400 ease-linear'
 			>
-				<img src='/lenceria.jpg' alt='Logo Seven Group' />
+				<img class="max-h-[128px]" src='/lenceria.jpg' alt='Logo Seven Group' />
 				<span
 					id='descuento'
-					class='absolute top-0 left-0 p-2 bg-[#f2b32a] text-[#1e1e1e]'
+					class=' absolute top-0 left-0 p-2 bg-[#f2b32a] text-[#1e1e1e]'
 					>07%</span
 				>
 			</div>
 			<div
 				class='relative p-4 cursor-pointer transition duration-400 ease-linear'
 			>
-				<img src='/accesorios.png' alt='Logo Seven Group' />
+				<img class="max-h-[128px]" src='/accesorios.png' alt='Logo Seven Group' />
 				<span
 					id='descuento'
-					class='absolute top-0 left-0 p-2 bg-[#f2b32a] text-[#1e1e1e]'
+					class=' absolute top-0 left-0 p-2 bg-[#f2b32a] text-[#1e1e1e]'
 					>10%</span
 				>
 			</div>
 			<div
 				class='relative p-4 cursor-pointer transition duration-400 ease-linear'
 			>
-				<img src='/vinodelacaza.jpg' alt='Logo Seven Group' />
+				<img class="max-h-[128px]" src='/vinodelacaza.jpg' alt='Logo Seven Group' />
 				<span
 					id='descuento'
-					class='absolute top-0 left-0 p-2 bg-[#f2b32a] text-[#1e1e1e]'
-					>00%</span
+					class=' absolute top-0 left-0 p-2 bg-[#f2b32a] text-[#1e1e1e]'
+					>05%</span
+				>
+			</div>
+			<div
+				class='relative p-4 cursor-pointer transition duration-400 ease-linear'
+			>
+				<img class="max-h-[128px]" src='/valentin.jpg' alt='Logo Seven Group' />
+				<span
+					id='descuento'
+					class=' absolute top-0 left-0 p-2 bg-[#f2b32a] text-[#1e1e1e]'
+					>15%</span
 				>
 			</div>
 		</div>
 	</div>
 </div>
 <style>
+	.container::-webkit-scrollbar {
+        height: 0px;
+    }
+    .container::-webkit-scrollbar-thumb {
+        background: #f2b32a;
+        border-radius: 3px;
+    }
 	.container > div {
 		width: 12rem;
 	}
