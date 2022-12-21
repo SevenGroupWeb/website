@@ -8,29 +8,13 @@ export interface Props {
 const { href, title, body } = Astro.props
 ---
 
-<script is:inline>
-	const fadeOut = () => {
-		const loaderWrapper = document.querySelector('.load_wrapper')
-		loaderWrapper.classList.add('fade')
-	}
-	
-	window.addEventListener('load', fadeOut)
-	window.onscroll = () => {
-		if (window.scrollY > 100) {
-			header.style.backgroundColor = '#0e0e0e'
-		}
-		if (window.scrollY < 100) {
-			header.style.backgroundColor = 'transparent'
-		}
-	}
-</script>
 <div
-	class='load_wrapper absolute top-0 left-0 bottom-0 right-0 h-screen w-screen z-20 bg-[#0e0e0e] grid place-items-center'>
-
+	class='load_wrapper absolute top-0 left-0 bottom-0 right-0 h-screen w-screen z-20 bg-[#0e0e0e] grid place-items-center'
+>
 	<div class='loader'></div>
 </div>
 
-<header id='header' class='sticky t-0 z-10 transition duration-150'>
+<!-- <header id='header' class='sticky t-0 z-10 transition duration-150'>
 	<div class='flex items-center justify-between lg:mx-32'>
 		<a href='/' class='flex items-center'>
 			<picture>
@@ -59,7 +43,96 @@ const { href, title, body } = Astro.props
 			</li>
 		</ul>
 	</div>
+</header> -->
+
+<header id='header' class='sticky t-0 z-10 transition duration-150'> 
+	<nav
+		class='flex items-center justify-between flex-wrap bg-teal-500 px-6 py-2'
+	>
+		<div class='flex items-center flex-shrink-0 mr-6'>
+			<a href='/' class='flex items-center'>
+				<picture>
+					<img src='/favicon.png' alt='Seven Group Logo' class='w-20 mr-2' />
+				</picture>
+				<h2 class='hidden font-medium md:block tracking-tight text-xl'>
+					Seven Group
+				</h2>
+			</a>
+		</div>
+		<div id='boton' class='block lg:hidden'>
+			<button
+				class='boton flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white'
+			>
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					viewBox='0 0 448 512'
+					class='h-4 w-4'
+				>
+					<path
+						d='M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z'
+					></path>
+				</svg>
+			</button>
+		</div>
+		<div
+			id='menu'
+			class='w-full hidden pb-2 lg:pb-0 lg:flex lg:items-center lg:w-auto'
+		>
+			<ul class='text-md font-semibold lg:flex-grow text-right'>
+				<li class='block mt-5 lg:inline-block lg:mt-0'>
+					<a
+						href='#'
+						class='text-teal-200 p-3 transition duration-200 hover:bg-[#161616] rounded mr-4'
+						>Inicio</a
+					>
+				</li>
+				<li class='block mt-5 lg:inline-block lg:mt-0'>
+					<a
+						href='#'
+						class='text-teal-200 p-3 transition duration-200 hover:bg-[#161616] rounded mr-4'
+						>Sobre nosotros</a
+					>
+				</li>
+				<li class='block mt-5 lg:inline-block lg:mt-0'>
+					<a
+						href='#'
+						class='text-teal-200 p-3 transition duration-200 hover:bg-[#161616] rounded mr-4'
+						>Convenios</a
+					>
+				</li>
+			</ul>
+			<div class='flex justify-end'>
+				<a
+					href='#'
+					class='inline-block text-md px-4 py-3 transition mr-4 duration-200 leading-none border rounded mt-4 lg:mt-0 font-semibold hover:bg-[#161616]'
+					>Contáctanos</a
+				>
+			</div>
+		</div>
+	</nav>
 </header>
+
+<script is:inline>
+	const fadeOut = () => {
+		const loaderWrapper = document.querySelector('.load_wrapper')
+		loaderWrapper.classList.add('fade')
+	}
+
+	window.addEventListener('load', fadeOut)
+	window.onscroll = () => {
+		if (window.scrollY > 100) {
+			header.style.backgroundColor = '#0e0e0e'
+		}
+		if (window.scrollY < 100) {
+			header.style.backgroundColor = 'transparent'
+		}
+	}
+
+	document.getElementById('boton').addEventListener('click', () => {
+		document.querySelector('#menu').classList.toggle('hidden')
+	})
+</script>
+
 <style>
 	.load_wrapper {
 		transition: opacity 0.25s, visibility 1s, z-index 2s;
@@ -102,6 +175,9 @@ const { href, title, body } = Astro.props
 		opacity: 0;
 		visibility: hidden;
 		z-index: -100;
+	}
+	svg {
+		fill: aliceblue;
 	}
 
 	header {
