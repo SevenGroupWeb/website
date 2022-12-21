@@ -1,14 +1,26 @@
 ---
-
-import Layout from '../layouts/Layout.astro';
-
+import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title="Seven Group">
-
-	<main >
-        <h1>404 No encotré lo que estás buscando :(</h1>
-        <h4>Seguro desde el <a href="/">inicio</a> lo encuentras.</h4>
+<Layout title='Seven Group' convenios={false}>
+	<main class='grid place-items-center'>
+		<div class="flex flex-col items-center">
+                        <h1 class="font-bold text-[#e7b242]">404</h1>
+			<h2>No encontré lo que estás buscando :(</h2>
+			<h4>Seguro desde el <a href='/'>inicio</a> lo encuentras.</h4>
+		</div>
 	</main>
-
 </Layout>
+
+<style>
+        main{
+                height: 60vh;
+        }
+        h1{
+                font-size: 60px;
+                color: #e7b242;
+        }
+        a{
+                color:rgb(196, 196, 255);
+        }
+</style>

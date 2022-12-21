@@ -11,7 +11,7 @@
 
 </script>
 
-<div class='w-full py-16'>
+<div id="container" class='w-full py-16 cursor-pointer'>
 	<div class='m-auto mt-8'>
 		<div class='m-auto text-center lg:w-7/12'>
 			<h2 class='text-2xl font-bold md:text-4xl'>Nuestros convenios</h2>
@@ -26,8 +26,8 @@
 				<img class="max-h-[128px]" src='/lenceria.jpg' alt='Logo Seven Group' />
 				<span
 					id='descuento'
-					class=' absolute top-0 left-0 p-2 bg-[#f2b32a] text-[#1e1e1e]'
-					>7.0%</span
+					class=' absolute top-0 left-3 p-2 bg-[#e7b242] text-[#1e1e1e]'
+					>7%</span
 				>
 			</div>
 			<div
@@ -36,7 +36,7 @@
 				<img class="max-h-[128px]" src='/accesorios.png' alt='Logo Seven Group' />
 				<span
 					id='descuento'
-					class=' absolute top-0 left-0 p-2 bg-[#f2b32a] text-[#1e1e1e]'
+					class=' absolute top-0 left-3 p-2 bg-[#e7b242] text-[#1e1e1e]'
 					>10%</span
 				>
 			</div>
@@ -46,8 +46,8 @@
 				<img class="max-h-[128px]" src='/vinodelacaza.jpg' alt='Logo Seven Group' />
 				<span
 					id='descuento'
-					class=' absolute top-0 left-0 p-2 bg-[#f2b32a] text-[#1e1e1e]'
-					>5.0%</span
+					class=' absolute top-0 left-3 p-2 bg-[#e7b242] text-[#1e1e1e]'
+					>5%</span
 				>
 			</div>
 			<div
@@ -56,7 +56,7 @@
 				<img class="max-h-[128px]" src='/valentin.jpg' alt='Logo Seven Group' />
 				<span
 					id='descuento'
-					class=' absolute top-0 left-0 p-2 bg-[#f2b32a] text-[#1e1e1e]'
+					class=' absolute top-0 left-3 p-2 bg-[#e7b242] text-[#1e1e1e]'
 					>15%</span
 				>
 			</div>
@@ -64,6 +64,9 @@
 	</div>
 	<p class="text-center italic">Más de 4000 personas ya están disfrutando de estos beneficios...</p>
 </div>
+<script is:inline>
+	document.getElementById("container").addEventListener('click', ()=> window.location.href = "https://sevengroupcolombia.com.co/convenios")
+</script>
 <style>
 	.container::-webkit-scrollbar {
         height: 0px;

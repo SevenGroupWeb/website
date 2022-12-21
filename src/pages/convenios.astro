@@ -1,78 +1,58 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Convenio from '../components/convenio.astro'
+import Convenio from '../components/Convenio.astro'
 ---
 
-<!-- 
-<Layout title='Seven Group'>
-	<main class='grid'>
-		<Convenio
-			img='/lenceria.jpg'
-			nombre='Lencería Sanmy'
-			descripcion='Somos un grupo empresarial especializado en ofrecer diferentes bienes y servicios ded alta calidad. A través nuestras marcas aliadas desarrollamos varias actividadeds comerciales y de servicio con el objetivo de dejar huella positiva en cada uno de nuestros clientes.'
-			descuento='07'
-			url='https://www.instagram.com/invites/contact/?i=118wku63sk0t0&utm_content=q3qwd1l'
-		/>
-		<Convenio
-			img='/accesorios.png'
-			nombre='Accesorios tal'
-			descripcion='Hola mi broki ofrecemos accesorios re guaches para toda ocasion.'
-			descuento='10'
-			url='https://www.instagram.com/invites/contact/?i=118wku63sk0t0&utm_content=q3qwd1l'
-		/>
-		<Convenio
-			img='/valentin.jpg'
-			nombre='Valentín'
-			descripcion='San valen valen, valen valen tin tin, tin tin. Quiero ser un saltarín.'
-			descuento='20'
-			url='https://www.instagram.com/invites/contact/?i=118wku63sk0t0&utm_content=q3qwd1l'
-		/>
-		<Convenio
-			img='/vinodelacaza.jpg'
-			nombre='Vino de la Caza'
-			descripcion='Vino ribelino'
-			descuento='15'
-			url='https://www.instagram.com/invites/contact/?i=118wku63sk0t0&utm_content=q3qwd1l'
-		/>
-	</main>
-</Layout> -->
-<Layout title="Convenios | Seven Group Colombia">
+<Layout title='Convenios | Seven Group Colombia' convenios={true}>
 	<main class='container px-6 py-10 mx-auto'>
-		<h1 class='text-3xl font-semibold capitalize lg:text-4xl'>
+		<h1 class='text-3xl font-semibold mb-8 capitalize lg:text-4xl'>
 			Nuestros convenios
 		</h1>
 
-		<p><i>Pronto...</i></p>
-
-		<!-- <div class='grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2'>
-			<Convenio
-				img='/lenceria.jpg'
-				nombre='Lencería Sanmy'
-				descripcion='Somos un grupo empresarial especializado en ofrecer diferentes bienes y servicios ded alta calidad. A través nuestras marcas aliadas desarrollamos varias actividadeds comerciales y de servicio con el objetivo de dejar huella positiva en cada uno de nuestros clientes.'
-				descuento='07'
-				url='https://www.instagram.com/invites/contact/?i=118wku63sk0t0&utm_content=q3qwd1l'
-			/>
+		<div id='cards'>
 			<Convenio
 				img='/accesorios.png'
-				nombre='Accesorios tal'
-				descripcion='Hola mi broki ofrecemos accesorios re guaches para toda ocasion.'
+				nombre='Accesorios Isaamar'
+				descripcion='Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse maxime temporibus aut distinctio. Eos autem ab voluptate! '
 				descuento='10'
-				url='https://www.instagram.com/invites/contact/?i=118wku63sk0t0&utm_content=q3qwd1l'
+				url='https://www.instagram.com/accesorios_isaamar/'
 			/>
 			<Convenio
 				img='/valentin.jpg'
 				nombre='Valentín'
-				descripcion='San valen valen, valen valen tin tin, tin tin. Quiero ser un saltarín.'
-				descuento='20'
-				url='https://www.instagram.com/invites/contact/?i=118wku63sk0t0&utm_content=q3qwd1l'
+				descripcion='Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse maxime temporibus aut distinctio. Eos autem ab voluptate! '
+				descuento='15'
+				url='https://www.instagram.com/sevengroup_colombia/'
 			/>
 			<Convenio
 				img='/vinodelacaza.jpg'
-				nombre='Vino de la Caza'
-				descripcion='Vino ribelino'
-				descuento='15'
-				url='https://www.instagram.com/invites/contact/?i=118wku63sk0t0&utm_content=q3qwd1l'
+				nombre={`Vino D' La Caza`}
+				descripcion='Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse maxime temporibus aut distinctio. Eos autem ab voluptate! '
+				descuento='5'
+				url='https://www.instagram.com/sevengroup_colombia/'
 			/>
-		</div> -->
+			<Convenio
+				img='/lenceria.jpg'
+				nombre='Lencería Sanmy'
+				descripcion='Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse maxime temporibus aut distinctio. Eos autem ab voluptate! '
+				descuento='7'
+				url='https://www.instagram.com/sevengroup_colombia/'
+			/>
+		</div>
 	</main>
 </Layout>
+
+<style>
+	#cards {
+		display: grid;
+		gap: 1rem;
+		grid-auto-flow: dense;
+		/* grid-auto-rows: 22rem; */
+		grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+	}
+	@media(max-width: 500px){
+		#cards{
+			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		}
+	}
+</style>

@@ -1,39 +1,71 @@
 ---
 export interface Props {
-	img: string,
-    nombre: string,
-    descuento: string,
-    descripcion: string,
-    url: string
-
+	img: string
+	nombre: string
+	descuento: string
+	descripcion: string
+	url: string
 }
 
 const { img, nombre, descuento, descripcion, url } = Astro.props
+const hl = false //sadly
 ---
 
-<!-- <article class="w-1/2 flex gap-2 m-3">
-	<img src={img} alt={nombre} class="object-cover w-[200px] max-h-[200px]"/>
-	<div class='relative text'>
-		<h2 class="text-2xl font-bold ">{nombre}</h2>
-		{descuento && <span class="absolute right-2 top-0">{descuento}%</span> }
-		<p>
+<script is:inline>
+	/* 
+	const urlSearchParams = new URLSearchParams(Astro.location.search)
+	const { hl } = Object.fromEntries(urlSearchParams.entries())
+	if (img == `/${hl}.jpg` || img == `/${hl}.png`) {
+		let hl = true
+	} */
+</script>
+<div
+	id='card'
+	data-url={url}
+	class={hl
+		? 'flex justify-between max-h-[150px] md:max-h-[250px] lg:max-h-[300px] cursor-pointer rounded highlighted'
+		: 'flex justify-between max-h-[150px] md:max-h-[250px] lg:max-h-[300px] cursor-pointer rounded'}
+>
+	<a href='#!' class='self-center'>
+		<img
+			class='rounded-tl rounded-bl w-[120px] h-[150px] lg:w-[190px] lg:h-[200px] object-cover'
+			src={img}
+			alt={nombre}
+		/>
+	</a>
+	<div class='p-3 md:p-6 relative w-1/2 flex-grow'>
+		<h5 class='text-gray-900 text-base md:text-xl font-medium mb-1 md:mb-2'>{nombre}</h5>
+		{
+			descuento && (
+				<span class='absolute right-0 top-0 px-2 py-1 md:p-2 rounded-tr font-medium'>
+					{descuento}%
+				</span>
+			)
+		}
+		<p class='text-gray-700 text-sm md:text-base mb-4'>
 			{descripcion}
 		</p>
-		{url && <a href={url} class="italic text-right w-full inline-block">Saber más</a>}
 	</div>
-</article> -->
+</div>
 
-<div class="flex justify-center">
-	<a href={url} class="rounded-lg shadow-lg bg-white max-w-sm">
-	  <a href="#!">
-		<img class="rounded-t-lg" src={img} alt={nombre}/>
-	  </a>
-	  <div class="p-6">
-		<h5 class="text-gray-900 text-xl font-medium mb-2">{nombre}</h5>
-		{descuento && <span class="absolute right-2 top-0">{descuento}%</span> }
-		<p class="text-gray-700 text-base mb-4">
-		  {descripcion}
-		</p>
-	  </div>
-	</a>
-  </div>
+<script is:inline>
+	document
+		.getElementById('card')
+		.addEventListener(
+			'click',
+			() =>
+				(window.location.href = document
+					.getElementById('card')
+					.getAttribute('data-url'))
+		)
+</script>
+
+<style>
+	#card {
+		background-color: rgb(27, 27, 27);
+	}
+	span {
+		background-color: #e7b242;
+		color: #0e0e0e;
+	}
+</style>

@@ -14,7 +14,7 @@ const { href, title, body } = Astro.props
 	<div class='loader'></div>
 </div>
 
-<header id='header' class='sticky t-0 z-10 transition duration-150'> 
+<header id='header' class='sticky t-0 z-10 transition duration-150'>
 	<nav
 		class='flex items-center justify-between flex-wrap bg-teal-500 px-6 py-2'
 	>
@@ -43,11 +43,10 @@ const { href, title, body } = Astro.props
 				</svg>
 			</button>
 		</div>
-		<div
-			id='menu'
-			class='w-full hidden pb-2 lg:pb-0 lg:flex lg:items-center lg:w-auto'
-		>
-			<ul class='text-md font-semibold lg:flex-grow text-right'>
+		<div id='menu' class='w-full hidden lg:pb-0 lg:flex lg:items-center lg:w-auto'>
+			<ul
+				class='text-md  font-semibold lg:flex lg:items-center lg:flex-grow text-right'
+			>
 				<li class='block mt-5 lg:inline-block lg:mt-0'>
 					<a
 						href='/'
@@ -58,7 +57,7 @@ const { href, title, body } = Astro.props
 				<li class='block mt-5 lg:inline-block lg:mt-0'>
 					<a
 						id='sobrenosotros'
-						class='text-teal-200 p-3 transition duration-200 hover:bg-[#161616] rounded mr-4'
+						class='cursor-pointer text-teal-200 p-3 transition duration-200 hover:bg-[#161616] rounded mr-4'
 						>Sobre nosotros</a
 					>
 				</li>
@@ -66,17 +65,17 @@ const { href, title, body } = Astro.props
 					<a
 						href='/convenios'
 						class='text-teal-200 p-3 transition duration-200 hover:bg-[#161616] rounded mr-4'
-						>Empresas</a
+						>Convenios</a
+					>
+				</li>
+				<li class='flex justify-end'>
+					<a
+						id='contacto'
+						class='cursor-pointer inline-block text-md px-4 py-3 transition mr-4 duration-200 leading-none border rounded mt-4 lg:mt-0 font-semibold hover:bg-[#161616]'
+						>Contáctanos</a
 					>
 				</li>
 			</ul>
-			<div class='flex justify-end'>
-				<a
-					id='contacto'
-					class='inline-block text-md px-4 py-3 transition mr-4 duration-200 leading-none border rounded mt-4 lg:mt-0 font-semibold hover:bg-[#161616]'
-					>Contáctanos</a
-				>
-			</div>
 		</div>
 	</nav>
 </header>
@@ -159,5 +158,12 @@ const { href, title, body } = Astro.props
 
 	header {
 		top: 0;
+	}
+	@media (max-width: 1024px) {
+		#menu > ul {
+			width: 92vw;
+			padding-bottom: 1rem;
+			background-color: #0e0e0e;
+		}
 	}
 </style>
