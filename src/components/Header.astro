@@ -14,37 +14,6 @@ const { href, title, body } = Astro.props
 	<div class='loader'></div>
 </div>
 
-<!-- <header id='header' class='sticky t-0 z-10 transition duration-150'>
-	<div class='flex items-center justify-between lg:mx-32'>
-		<a href='/' class='flex items-center'>
-			<picture>
-				<img src='/favicon.png' alt='Seven Group Logo' class='w-20' />
-			</picture>
-			<h2 class='hidden font-semibold md:block'>Seven Group</h2>
-		</a>
-		<ul class='flex gap-2 lg:gap-4 font-bold'>
-			<li>
-				<a
-					class='p-3 hover:bg-[#161616] rounded'
-					href='https://sevengroupcolombia.com.co'>Inicio</a>
-			</li>
-			<li>
-				<a class='p-3 hover:bg-[#161616] rounded' href='https://sevengroupcolombia.com.co/#sobrenosotros'
-					>Nosotros</a
-				>
-			</li>
-			<li>
-				<a class='p-3 hover:bg-[#161616] rounded' href='https://sevengroupcolombia.com.co/convenios'
-					>Convenios</a
-				>
-			</li>
-			<li>
-				<a class='p-3 hover:bg-[#161616] rounded' href='https://sevengroupcolombia.com.co/#contacto'>Contacto</a>
-			</li>
-		</ul>
-	</div>
-</header> -->
-
 <header id='header' class='sticky t-0 z-10 transition duration-150'> 
 	<nav
 		class='flex items-center justify-between flex-wrap bg-teal-500 px-6 py-2'
@@ -81,29 +50,29 @@ const { href, title, body } = Astro.props
 			<ul class='text-md font-semibold lg:flex-grow text-right'>
 				<li class='block mt-5 lg:inline-block lg:mt-0'>
 					<a
-						href='#'
+						href='/'
 						class='text-teal-200 p-3 transition duration-200 hover:bg-[#161616] rounded mr-4'
 						>Inicio</a
 					>
 				</li>
 				<li class='block mt-5 lg:inline-block lg:mt-0'>
 					<a
-						href='#'
+						id='sobrenosotros'
 						class='text-teal-200 p-3 transition duration-200 hover:bg-[#161616] rounded mr-4'
 						>Sobre nosotros</a
 					>
 				</li>
 				<li class='block mt-5 lg:inline-block lg:mt-0'>
 					<a
-						href='#'
+						href='/convenios'
 						class='text-teal-200 p-3 transition duration-200 hover:bg-[#161616] rounded mr-4'
-						>Convenios</a
+						>Empresas</a
 					>
 				</li>
 			</ul>
 			<div class='flex justify-end'>
 				<a
-					href='#'
+					id='contacto'
 					class='inline-block text-md px-4 py-3 transition mr-4 duration-200 leading-none border rounded mt-4 lg:mt-0 font-semibold hover:bg-[#161616]'
 					>Contáctanos</a
 				>
@@ -120,15 +89,23 @@ const { href, title, body } = Astro.props
 
 	window.addEventListener('load', fadeOut)
 	window.onscroll = () => {
-		if (window.scrollY > 100) {
+		if (window.scrollY > 80) {
 			header.style.backgroundColor = '#0e0e0e'
 		}
-		if (window.scrollY < 100) {
+		if (window.scrollY < 80) {
 			header.style.backgroundColor = 'transparent'
 		}
 	}
 
 	document.getElementById('boton').addEventListener('click', () => {
+		document.querySelector('#menu').classList.toggle('hidden')
+	})
+	document.getElementById('sobrenosotros').addEventListener('click', () => {
+		window.scroll(0, 820)
+		document.querySelector('#menu').classList.toggle('hidden')
+	})
+	document.getElementById('contacto').addEventListener('click', () => {
+		window.scroll(0, 1500)
 		document.querySelector('#menu').classList.toggle('hidden')
 	})
 </script>
