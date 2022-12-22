@@ -9,32 +9,28 @@ export interface Props {
 
 const { img, nombre, descuento, descripcion, url } = Astro.props
 const hl = false //sadly
+console.log(url)
 ---
 
-<script is:inline>
-	/* 
-	const urlSearchParams = new URLSearchParams(Astro.location.search)
-	const { hl } = Object.fromEntries(urlSearchParams.entries())
-	if (img == `/${hl}.jpg` || img == `/${hl}.png`) {
-		let hl = true
-	} */
-</script>
-<div
+<button
 	id='card'
 	data-url={url}
+	onclick='() => window.location.href = url'
 	class={hl
 		? 'flex justify-between max-h-[150px] md:max-h-[250px] lg:max-h-[300px] cursor-pointer rounded highlighted'
-		: 'flex justify-between max-h-[150px] md:max-h-[250px] lg:max-h-[300px] cursor-pointer rounded'}
+		: 'relative flex justify-between max-h-[150px] md:max-h-[250px] lg:max-h-[300px] rounded cursor-pointer'}
 >
-	<a href='#!' class='self-center'>
+	<a href={url} class='self-center'>
 		<img
 			class='rounded-tl rounded-bl w-[120px] h-[150px] lg:w-[190px] lg:h-[200px] object-cover'
 			src={img}
 			alt={nombre}
 		/>
 	</a>
-	<div class='p-3 md:p-6 relative w-1/2 flex-grow'>
-		<h5 class='text-gray-900 text-base md:text-xl font-medium mb-1 md:mb-2'>{nombre}</h5>
+	<div class='p-3 md:p-6  w-1/2 flex-grow text-left'>
+		<h5 class='text-gray-900 text-base md:text-xl font-medium mb-1 md:mb-2'>
+			{nombre}
+		</h5>
 		{
 			descuento && (
 				<span class='absolute right-0 top-0 px-2 py-1 md:p-2 rounded-tr font-medium'>
@@ -42,23 +38,12 @@ const hl = false //sadly
 				</span>
 			)
 		}
-		<p class='text-gray-700 text-sm md:text-base mb-4'>
+		<p class='text-gray-700 text-xs md:text-base mb-4'>
 			{descripcion}
 		</p>
+		<a href={url} class="absolute text-xs  right-[1px] bottom-[1px] md:text-base md:right-[5px]  md:bottom-[5px] text-md px-3 py-3 transition duration-200 leading-none rounded mt-4 lg:mt-0 font-semibold hover:bg-[#161616]">Ver más</a>
 	</div>
-</div>
-
-<script is:inline>
-	document
-		.getElementById('card')
-		.addEventListener(
-			'click',
-			() =>
-				(window.location.href = document
-					.getElementById('card')
-					.getAttribute('data-url'))
-		)
-</script>
+</button>
 
 <style>
 	#card {
