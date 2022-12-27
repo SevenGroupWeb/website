@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Convenio from '../components/convenio.astro'
-
 ---
 
 <Layout title='Convenios | Seven Group Colombia' convenios={true}>
@@ -40,12 +39,19 @@ import Convenio from '../components/convenio.astro'
 				url='https://web.facebook.com/sanmycalidadfrescuraparasuhogar/'
 			/>
 			<Convenio
-			img='/marrivas.jpeg'
-			nombre='Mar Rivas'
-			descripcion='Somos una tienda física de ropa y accesorios para Dama. 5% en toda la tienda.'
-			descuento='5'
-			url='https://www.instagram.com/marrivasonline/'
-		/>
+				img='/marrivas.jpeg'
+				nombre='Mar Rivas'
+				descripcion='Somos una tienda física de ropa y accesorios para Dama. 5% en toda la tienda.'
+				descuento='5'
+				url='https://www.instagram.com/marrivasonline/'
+			/>
+			<Convenio
+				img='/nicolasarevalo.png'
+				nombre='Nicolás Arévalo - Desarrollador web'
+				descripcion='Soy un desarrollador freelance con más de un año de experiencia construyendo sitios web a medida.'
+				descuento='10'
+				url='https://niiico.com/'
+			/>
 		</div>
 	</main>
 </Layout>
@@ -58,8 +64,8 @@ import Convenio from '../components/convenio.astro'
 		/* grid-auto-rows: 22rem; */
 		grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
 	}
-	@media(max-width: 500px){
-		#cards{
+	@media (max-width: 500px) {
+		#cards {
 			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 		}
 	}

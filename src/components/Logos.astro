@@ -1,13 +1,31 @@
 <script is:inline>
 	
 	let xcord = 0
-	setInterval(() => {
-		if(xcord > 500) xcord = 0
-		
-		document.querySelector('#slider').scroll(xcord,0)
-		xcord += 1
 
-	}, 40)
+	if(window.screen.width > 500) {
+
+		//Para pc
+		console.log('para pc')
+		setInterval(() => {
+		if(xcord > 140) xcord = 0
+		
+			document.querySelector('#slider').scroll(xcord,0)
+			xcord += 1
+
+		}, 40)
+
+	} else{
+		// Para móvil
+		console.log('Para móvil')
+		setInterval(() => {
+		if(xcord > 640) xcord = 0
+		
+			document.querySelector('#slider').scroll(xcord,0)
+			xcord += 1
+
+		}, 40)
+	}
+	
 
 </script>
 
@@ -23,7 +41,7 @@
 			<div
 				class='relative grid place-items-center p-4 cursor-pointer transition duration-400 ease-linear'
 			>
-				<img class="max-h-[128px]" src='/lenceria.jpg' alt='Logo Seven Group' />
+				<img class="max-h-[128px]" src='/lenceria.jpg' alt='Logo Lencería Sanmy' />
 				<span
 					id='descuento'
 					class=' absolute top-0 left-3 p-2 bg-[#e7b242] text-[#1e1e1e]'
@@ -33,7 +51,7 @@
 			<div
 				class='relative grid place-items-center p-4 cursor-pointer transition duration-400 ease-linear'
 			>
-				<img class="max-h-[128px]" src='/accesorios.png' alt='Logo Seven Group' />
+				<img class="max-h-[128px]" src='/accesorios.png' alt='Logo Accesorios Isaamar' />
 				<span
 					id='descuento'
 					class=' absolute top-0 left-3 p-2 bg-[#e7b242] text-[#1e1e1e]'
@@ -43,7 +61,7 @@
 			<div
 				class='relative grid place-items-center p-4 cursor-pointer transition duration-400 ease-linear'
 			>
-				<img class="max-h-[128px]" src='/vinodelacaza.jpg' alt='Logo Seven Group' />
+				<img class="max-h-[128px]" src='/vinodelacaza.jpg' alt='Logo Vino de la Caza' />
 				<span
 					id='descuento'
 					class=' absolute top-0 left-3 p-2 bg-[#e7b242] text-[#1e1e1e]'
@@ -53,7 +71,7 @@
 			<div
 				class='relative grid place-items-center p-4 cursor-pointer transition duration-400 ease-linear'
 			>
-				<img class="max-h-[128px]" src='/valentin.jpg' alt='Logo Seven Group' />
+				<img class="max-h-[128px]" src='/valentin.jpg' alt='Logo Valentin' />
 				<span
 					id='descuento'
 					class=' absolute top-0 left-3 p-2 bg-[#e7b242] text-[#1e1e1e]'
@@ -63,16 +81,26 @@
 			<div
 			class='relative grid place-items-center p-4 cursor-pointer transition duration-400 ease-linear'
 		>
-			<img class="max-h-[128px]" src='/marrivas.jpeg' alt='Logo Seven Group' />
+			<img class="max-h-[128px]" src='/marrivas.jpeg' alt='Logo Mar Rivas' />
 			<span
 				id='descuento'
 				class=' absolute top-0 left-3 p-2 bg-[#e7b242] text-[#1e1e1e]'
 				>5%</span
 			>
 		</div>
+		<div
+			class='relative grid place-items-center p-4 cursor-pointer transition duration-400 ease-linear'
+		>
+			<img class="max-h-[128px]" src='/nicolasarevalo.png' alt='Logo Nicolás Arévalo' />
+			<span
+				id='descuento'
+				class=' absolute top-0 left-3 p-2 bg-[#e7b242] text-[#1e1e1e]'
+				>10%</span
+			>
+		</div>
 		</div>
 	</div>
-	<p class="text-center italic">Más de 4000 personas ya están disfrutando de estos beneficios...</p>
+	
 </div>
 <script is:inline>
 	document.getElementById("container").addEventListener('click', ()=> window.location.href = "https://sevengroupcolombia.com.co/convenios")
@@ -91,9 +119,7 @@
 	.container>div:hover {
 		transform: scale(1.1);
 	}
-	p{
-		color: rgb(212, 212, 212);
-	}
+	
 	#descuento {
 		clip-path: polygon(9% 16%, 89% 16%, 90% 79%, 75% 79%, 86% 100%, 51% 80%, 9% 79%);
 	}
