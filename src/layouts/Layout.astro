@@ -5,8 +5,8 @@ import Header from '../components/Header.astro'
 import HeaderConvenios from '../components/HeaderConvenios.astro'
 
 export interface Props {
-	title: string,
-	convenios: boolean
+	title?: string,
+	convenios?: boolean
 }
 
 const { title, convenios } = Astro.props
